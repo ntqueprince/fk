@@ -1111,8 +1111,8 @@ function buildSbiPolicyIssuanceEmail() {
   const policyNumber = (f.sbiPolicyNumber || "").trim();
   const signature = (f.sbiSignature || "Shivang Jaiswal").trim();
   return [
-    "To: Vasudev, Tajmohammad",
-    "CC: Subhan",
+    "To: Vasudev",
+    "CC: Tajmohammad, Subhan Sir",
     `Subject: Policy Issuance : ${policyNumber}`.trim(),
     "",
     "Hi Team,",
