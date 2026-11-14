@@ -1,0 +1,1725 @@
+﻿body {
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    background: linear-gradient(to right, #ffe6e6, #fff0e6, #ffffe6, #e6ffec, #e6e6ff, #f0e6ff, #ffe6f0);
+    text-align: center;
+    margin: 0;
+    min-height: 100vh;
+}
+
+h2,
+h3 {
+    color: #1a237e;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 2em;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+.animated-btn {
+    min-width: 260px;
+    max-width: 380px;
+    width: 80%;
+    min-height: 70px;
+    padding: 12px;
+    margin: 8px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.animated-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+}
+
+.upload-section {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+input[type="file"],
+input[type="text"],
+input[type="password"],
+button,
+select,
+input[type="number"] {
+    padding: 12px;
+    margin: 8px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #b0bec5;
+    width: 80%;
+    max-width: 300px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="file"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #3f51b5;
+    box-shadow: 0 0 8px rgba(63, 81, 181, 0.3);
+    outline: none;
+}
+
+button {
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #303f9f;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.password-field-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.password-field-wrapper input {
+    margin-right: 0;
+}
+
+.toggle-password-btn {
+    width: auto;
+    min-width: 72px;
+    max-width: 90px;
+    margin-left: 0;
+    background: #475569;
+}
+
+.colorful-upload-btn,
+.upload-btn,
+.calculate-btn {
+    background: linear-gradient(90deg, #3f51b5, #5c6bc0);
+    font-weight: 600;
+}
+
+.cancel-btn,
+.close-btn {
+    background: #ef4444;
+    font-weight: 600;
+}
+
+.progress-container,
+.modal-progress-container {
+    width: 80%;
+    max-width: 300px;
+    margin: 10px auto;
+}
+
+.progress-bar,
+.modal-progress-bar {
+    width: 100%;
+    background-color: #eceff1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.progress,
+.modal-progress {
+    width: 0%;
+    height: 20px;
+    background: linear-gradient(90deg, #3f51b5, #5c6bc0);
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    font-weight: 400;
+    transition: width 0.3s ease;
+}
+
+.status,
+.modal-status {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #455a64;
+    font-weight: 400;
+}
+
+.file-preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin: 12px auto;
+}
+
+.file-preview-item {
+    position: relative;
+    width: 140px;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.file-preview-item img {
+    width: 100%;
+    height: 92px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.file-preview-name {
+    margin: 6px 0 0;
+    font-size: 12px;
+    color: #37474f;
+    overflow-wrap: anywhere;
+}
+
+.remove-preview-btn {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    background: #ef4444;
+    font-weight: 700;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    padding: 10px;
+}
+
+.image-container {
+    position: relative;
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    max-width: 200px;
+}
+
+.image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+#gallery img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+}
+
+.tag {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #37474f;
+    overflow-wrap: anywhere;
+}
+
+.gallery-btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+}
+
+.download-btn,
+.delete-btn,
+.unlock-btn {
+    width: 100%;
+    margin: 0;
+    padding: 8px;
+    font-size: 13px;
+}
+
+.download-btn {
+    background: #2563eb;
+}
+
+.delete-btn {
+    background: #dc2626;
+}
+
+.unlock-btn {
+    background: #7c3aed;
+}
+
+.image-locked img {
+    filter: blur(8px) brightness(0.75);
+}
+
+.lock-overlay {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 8px;
+    background: rgba(15, 23, 42, 0.5);
+    font-weight: 700;
+}
+
+.modal,
+.csat-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.55);
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+}
+
+.modal-content,
+.csat-modal-content {
+    background: white;
+    padding: 24px;
+    border-radius: 15px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+    width: 90%;
+    max-width: 430px;
+    max-height: 92vh;
+    overflow-y: auto;
+}
+
+.modal-content h4,
+.csat-modal-content h4 {
+    color: #1a237e;
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.input-section {
+    margin: 10px 0;
+}
+
+.input-section label {
+    display: block;
+    color: #263238;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.result-section {
+    margin: 15px auto;
+    padding: 12px;
+    border-radius: 10px;
+    background: #f5f7fb;
+}
+
+.result-section p {
+    margin: 8px 0;
+    font-weight: 600;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.success {
+    color: #15803d;
+}
+
+.error {
+    color: #dc2626;
+}
+
+.shivang-rainbow {
+    font-size: 22px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #ef4444, #f59e0b, #22c55e, #3b82f6, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .animated-btn {
+        width: 92%;
+        min-width: 0;
+        font-size: 19px;
+    }
+
+    .upload-section {
+        padding: 16px;
+    }
+}
+
+/* Restored old dashboard layout: keep only CSAT + upload, but preserve original UI feel */
+.top-button-panel {
+    min-height: 72vh;
+    padding: 50px 40px 0;
+    background: linear-gradient(to right, #dbeafe, #ede9fe);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.top-button-panel .animated-btn {
+    width: 376px;
+    max-width: 90vw;
+    min-height: 71px;
+    margin: 0 auto;
+    border-radius: 16px;
+    font-size: 21px;
+    font-weight: 700;
+    box-shadow: 0 8px 16px rgba(37, 99, 235, 0.22);
+}
+
+.shivang-glow {
+    margin: -36px auto 34px;
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #6b6fd6;
+    text-shadow: 0 0 18px rgba(99, 102, 241, 0.28);
+}
+
+.upload-section {
+    width: calc(100% - 10px);
+    max-width: none;
+    margin: 0 auto 26px;
+    padding: 26px 40px 30px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.upload-section h2 {
+    font-size: 24px;
+    margin-bottom: 22px;
+    letter-spacing: 0.5px;
+}
+
+.upload-section label,
+.upload-section #fileUpload,
+.upload-section #tagInput,
+.upload-section .password-field-wrapper,
+.upload-section .colorful-upload-btn {
+    display: inline-flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.upload-section label {
+    width: auto;
+    margin: 8px 10px 8px 0;
+    font-size: 21px;
+    font-weight: 600;
+    color: #020617;
+}
+
+.upload-section #fileUpload {
+    width: 375px;
+    max-width: 40vw;
+    height: 68px;
+    background: #f8fafc;
+}
+
+.upload-section #filePreviewContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.upload-section #tagInput {
+    width: 376px;
+    max-width: 30vw;
+    height: 62px;
+    margin-top: 34px;
+    font-size: 20px;
+}
+
+.upload-section .password-field-wrapper {
+    width: 378px;
+    max-width: 30vw;
+    margin-top: 34px;
+    gap: 0;
+    flex-wrap: nowrap;
+}
+
+.upload-section .password-field-wrapper input {
+    width: 100%;
+    height: 62px;
+    margin: 8px 0 8px 8px;
+    border-right: 0;
+    border-radius: 8px 0 0 8px;
+    font-size: 20px;
+}
+
+.upload-section .toggle-password-btn {
+    width: 0;
+    min-width: 0;
+    max-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.upload-section .colorful-upload-btn {
+    width: 376px;
+    max-width: 30vw;
+    height: 60px;
+    margin-top: 34px;
+    justify-content: center;
+    border-radius: 30px;
+    font-size: 22px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #ec5bbb, #6d6df4);
+    box-shadow: 0 10px 18px rgba(99, 102, 241, 0.24);
+}
+
+.upload-section .progress-container {
+    width: 376px;
+    max-width: 30vw;
+    margin: 14px auto 0;
+}
+
+.upload-section .progress-bar {
+    height: 26px;
+    border-radius: 10px;
+}
+
+.upload-section .progress {
+    height: 26px;
+    line-height: 26px;
+    background: linear-gradient(90deg, #ec5bbb, #6d6df4);
+}
+
+.upload-section .status {
+    margin-top: 8px;
+    font-size: 18px;
+}
+
+h3[data-uploaded-heading="true"] {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.csat-modal-content {
+    border: 2px solid #4f5fe3;
+}
+
+.good-section {
+    background: #c8e6c9;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.bad-section {
+    background: #ffcdd2;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+    .top-button-panel {
+        min-height: 42vh;
+        padding: 36px 16px;
+    }
+
+    .shivang-glow {
+        margin: 12px auto 26px;
+        font-size: 42px;
+    }
+
+    .upload-section label,
+    .upload-section #fileUpload,
+    .upload-section #tagInput,
+    .upload-section .password-field-wrapper,
+    .upload-section .colorful-upload-btn {
+        display: flex;
+        max-width: 300px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .upload-section label {
+        justify-content: center;
+        font-size: 18px;
+    }
+
+    .upload-section .password-field-wrapper input {
+        margin-left: 0;
+        border-right: 1px solid #b0bec5;
+        border-radius: 8px;
+    }
+
+    .upload-section .progress-container {
+        max-width: 300px;
+        width: 80%;
+    }
+}
+
+/* Final old-UI alignment fixes */
+.csat-modal {
+    overflow: hidden;
+}
+
+.csat-modal-content {
+    width: 500px;
+    max-width: calc(100vw - 36px);
+    max-height: none;
+    overflow: visible;
+    padding: 26px 26px 24px;
+    border-radius: 16px;
+    border: 2px solid #4f5fe3;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+.csat-modal-content h4 {
+    font-size: 22px;
+    margin: 0 0 18px;
+    color: #1a237e;
+}
+
+.csat-modal-content .input-section {
+    width: 100%;
+    margin: 12px auto 18px;
+}
+
+.csat-modal-content .good-section,
+.csat-modal-content .bad-section {
+    padding: 14px 16px;
+}
+
+.csat-modal-content .input-section label {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.csat-modal-content input[type="number"],
+.csat-modal-content select {
+    width: 250px;
+    max-width: 82%;
+    height: 56px;
+    margin: 4px auto 0;
+    display: block;
+    font-size: 20px;
+}
+
+.csat-modal-content #requiredCSAT {
+    height: 48px;
+}
+
+.csat-modal-content .result-section {
+    width: 100%;
+    margin: 16px auto 18px;
+    padding: 18px 12px;
+    border-radius: 8px;
+}
+
+.csat-modal-content .result-section p {
+    font-size: 18px;
+}
+
+.csat-modal-content .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: nowrap;
+}
+
+.csat-modal-content .close-btn,
+.csat-modal-content .calculate-btn {
+    width: 188px;
+    max-width: 188px;
+    margin: 6px 0 0;
+    padding: 14px 18px;
+    border-radius: 9px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.csat-modal-content .close-btn {
+    background: #f9413b;
+}
+
+.csat-modal-content .calculate-btn {
+    background: #4553bf;
+}
+
+.shivang-rainbow {
+    font-size: 30px;
+    letter-spacing: 4px;
+}
+
+@media (max-height: 780px) {
+    .csat-modal-content {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 560px) {
+    .csat-modal-content .button-container {
+        flex-wrap: wrap;
+    }
+
+    .csat-modal-content .close-btn,
+    .csat-modal-content .calculate-btn {
+        width: 80%;
+        max-width: 260px;
+    }
+}
+
+/* Temporary Chhath Puja theme: keep the photo visible while preserving contrast. */
+body {
+    position: relative;
+    isolation: isolate;
+    background: #fff7ed;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        linear-gradient(rgba(20, 28, 46, 0.22), rgba(20, 28, 46, 0.22)),
+        url("chhath-background.png") center center / cover no-repeat;
+    filter: saturate(0.78) brightness(0.88);
+}
+
+.background-diya-glow {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse 13px 8px at 11% 47%, rgba(255, 192, 71, 0.9) 0%, rgba(255, 124, 24, 0.46) 42%, transparent 100%),
+        radial-gradient(ellipse 16px 9px at 29% 50%, rgba(255, 198, 83, 0.9) 0%, rgba(255, 125, 24, 0.42) 45%, transparent 100%),
+        radial-gradient(ellipse 12px 8px at 43% 45%, rgba(255, 192, 71, 0.9) 0%, rgba(255, 124, 24, 0.42) 45%, transparent 100%),
+        radial-gradient(ellipse 15px 9px at 67% 50%, rgba(255, 192, 71, 0.88) 0%, rgba(255, 124, 24, 0.4) 45%, transparent 100%),
+        radial-gradient(ellipse 14px 8px at 87% 91%, rgba(255, 194, 76, 0.9) 0%, rgba(255, 124, 24, 0.44) 45%, transparent 100%);
+    opacity: 0.6;
+    mix-blend-mode: screen;
+    animation: background-diyas-glow 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes background-diyas-glow {
+    from {
+        opacity: 0.34;
+        filter: brightness(0.88);
+    }
+    to {
+        opacity: 0.78;
+        filter: brightness(1.22);
+    }
+}
+
+.top-button-panel {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(89, 50, 18, 0.12);
+    backdrop-filter: blur(0.5px);
+}
+
+.upload-section {
+    background: rgba(255, 255, 255, 0.30) !important;
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    box-shadow: 0 18px 48px rgba(24, 34, 54, 0.2);
+    backdrop-filter: blur(2px);
+}
+
+.shivang-glow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(14px, 3vw, 34px);
+    color: #ff4f7b;
+    text-shadow: 0 2px 14px rgba(20, 28, 46, 0.35);
+}
+
+.heading-diya {
+    display: inline-block;
+    font-size: 0.68em;
+    filter: drop-shadow(0 2px 5px rgba(20, 28, 46, 0.35));
+    transform-origin: center bottom;
+    animation: diya-flicker 1.25s ease-in-out infinite alternate;
+}
+
+.heading-diya:last-child {
+    animation-delay: 0.35s;
+}
+
+.shivang-glow > span:nth-child(2) {
+    animation: chhath-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes diya-flicker {
+    0%, 100% {
+        transform: rotate(-4deg) scale(0.96);
+        filter: drop-shadow(0 0 3px rgba(255, 111, 0, 0.55));
+    }
+    50% {
+        transform: rotate(4deg) scale(1.06);
+        filter: drop-shadow(0 0 11px rgba(255, 168, 0, 0.9));
+    }
+}
+
+@keyframes chhath-pulse {
+    0%, 100% {
+        opacity: 1;
+        text-shadow: 0 2px 14px rgba(20, 28, 46, 0.35);
+    }
+    50% {
+        opacity: 0.72;
+        text-shadow: 0 0 22px rgba(255, 183, 77, 0.9);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .heading-diya,
+    .shivang-glow > span:nth-child(2),
+    .background-diya-glow {
+        animation: none;
+    }
+}
+
+/* Keep desktop focused on the gallery; retain upload controls on mobile. */
+@media (min-width: 901px) {
+    .upload-section {
+        display: none !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .upload-section {
+        display: block !important;
+    }
+}
+
+#gallery .image-container {
+    background: rgba(255, 255, 255, 0.94);
+}
+
+/* Match old screenshot spacing and SHIVANG styling */
+.top-button-panel {
+    min-height: 610px;
+    padding-top: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
+    align-items: flex-start;
+}
+
+.top-button-panel .animated-btn {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shivang-glow {
+    margin: 135px auto 34px;
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #ff4f7b;
+    text-shadow: none;
+}
+
+.upload-section {
+    margin-top: 0;
+}
+
+@media (max-width: 900px) {
+    .top-button-panel {
+        min-height: 520px;
+    }
+
+    .shivang-glow {
+        margin-top: 90px;
+        font-size: 42px;
+    }
+}
+
+/* Compact single-screen layout: scroll only when uploaded photos need space */
+body {
+    padding: 20px 24px 0;
+}
+
+.top-button-panel {
+    min-height: 0;
+    height: 250px;
+    padding: 50px 40px 0;
+    margin: 0;
+}
+
+.top-button-panel .animated-btn {
+    width: 376px;
+    min-height: 71px;
+}
+
+.shivang-glow {
+    margin: 38px auto 28px;
+    font-size: 48px;
+    color: #ff4f7b;
+}
+
+.upload-section {
+    margin-top: 0;
+    margin-bottom: 24px;
+    padding-top: 24px;
+    padding-bottom: 28px;
+}
+
+@media (min-width: 901px) {
+    .upload-section {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .top-button-panel {
+        height: 210px;
+        min-height: 0;
+    }
+
+    .shivang-glow {
+        margin-top: 26px;
+        margin-bottom: 22px;
+        font-size: 42px;
+    }
+}
+
+/* Smaller CSAT modal: compact old-style size */
+.csat-modal-content {
+    width: 430px !important;
+    max-width: calc(100vw - 42px) !important;
+    padding: 20px 24px 22px !important;
+    border-radius: 16px !important;
+    transform: none !important;
+}
+
+.csat-modal-content h4 {
+    font-size: 22px !important;
+    margin-bottom: 14px !important;
+}
+
+.csat-modal-content .input-section {
+    margin: 9px auto 13px !important;
+}
+
+.csat-modal-content .good-section,
+.csat-modal-content .bad-section {
+    padding: 10px 14px 12px !important;
+}
+
+.csat-modal-content .input-section label {
+    font-size: 18px !important;
+    margin-bottom: 6px !important;
+}
+
+.csat-modal-content input[type="number"],
+.csat-modal-content select {
+    width: 220px !important;
+    height: 46px !important;
+    padding: 8px 12px !important;
+    font-size: 18px !important;
+    margin-top: 3px !important;
+}
+
+.csat-modal-content #requiredCSAT {
+    height: 42px !important;
+}
+
+.csat-modal-content .result-section {
+    margin: 12px auto 14px !important;
+    padding: 12px 10px !important;
+}
+
+.csat-modal-content .result-section p {
+    font-size: 16px !important;
+    margin: 6px 0 !important;
+}
+
+.csat-modal-content .shivang-rainbow {
+    font-size: 26px !important;
+    letter-spacing: 4px !important;
+}
+
+.csat-modal-content .button-container {
+    gap: 14px !important;
+}
+
+.csat-modal-content .close-btn,
+.csat-modal-content .calculate-btn {
+    width: 160px !important;
+    max-width: 160px !important;
+    padding: 12px 14px !important;
+    font-size: 18px !important;
+    margin-top: 4px !important;
+}
+
+@media (max-height: 760px) {
+    .csat-modal-content {
+        transform: scale(0.92) !important;
+    }
+}
+
+/* Smaller upload section to match the second screenshot */
+.upload-section {
+    width: calc(100% - 48px) !important;
+    margin: 0 auto 18px !important;
+    padding: 24px 28px 28px !important;
+    border-radius: 18px !important;
+    min-height: 0 !important;
+}
+
+.upload-section h2 {
+    font-size: 24px !important;
+    margin: 0 0 12px !important;
+}
+
+.upload-section label {
+    font-size: 21px !important;
+    margin: 6px 10px 6px 0 !important;
+}
+
+.upload-section #fileUpload {
+    width: 375px !important;
+    height: 56px !important;
+    max-width: 40vw !important;
+    padding: 10px 12px !important;
+    margin: 6px 8px !important;
+    font-size: 18px !important;
+}
+
+.upload-section #tagInput {
+    width: 376px !important;
+    height: 54px !important;
+    max-width: 30vw !important;
+    margin-top: 22px !important;
+    font-size: 18px !important;
+}
+
+.upload-section .password-field-wrapper {
+    width: 376px !important;
+    max-width: 30vw !important;
+    margin-top: 22px !important;
+}
+
+.upload-section .password-field-wrapper input {
+    height: 54px !important;
+    font-size: 18px !important;
+}
+
+.upload-section .colorful-upload-btn {
+    width: 376px !important;
+    height: 54px !important;
+    max-width: 30vw !important;
+    margin-top: 22px !important;
+    font-size: 20px !important;
+}
+
+.upload-section .progress-container {
+    width: 376px !important;
+    max-width: 30vw !important;
+    margin-top: 8px !important;
+}
+
+.upload-section .progress-bar,
+.upload-section .progress {
+    height: 22px !important;
+    line-height: 22px !important;
+}
+
+.upload-section .status {
+    margin-top: 5px !important;
+    font-size: 16px !important;
+}
+
+h3[data-uploaded-heading="true"] {
+    margin-top: 14px !important;
+    margin-bottom: 8px !important;
+    font-size: 24px !important;
+}
+
+#gallery {
+    padding-top: 0 !important;
+}
+
+/* 50% smaller upload card */
+.upload-section {
+    width: calc(100% - 120px) !important;
+    margin: 0 auto 12px !important;
+    padding: 14px 22px 16px !important;
+    border-radius: 16px !important;
+}
+
+.upload-section h2 {
+    font-size: 21px !important;
+    margin: 0 0 6px !important;
+}
+
+.upload-section label {
+    font-size: 18px !important;
+    margin: 3px 8px 3px 0 !important;
+}
+
+.upload-section #fileUpload {
+    width: 340px !important;
+    height: 44px !important;
+    padding: 6px 10px !important;
+    margin: 3px 6px !important;
+    font-size: 16px !important;
+}
+
+.upload-section #tagInput {
+    width: 330px !important;
+    height: 42px !important;
+    margin-top: 10px !important;
+    padding: 8px 12px !important;
+    font-size: 16px !important;
+}
+
+.upload-section .password-field-wrapper {
+    width: 330px !important;
+    margin-top: 10px !important;
+}
+
+.upload-section .password-field-wrapper input {
+    height: 42px !important;
+    padding: 8px 12px !important;
+    font-size: 16px !important;
+}
+
+.upload-section .colorful-upload-btn {
+    width: 330px !important;
+    height: 42px !important;
+    margin-top: 10px !important;
+    padding: 8px 14px !important;
+    font-size: 17px !important;
+    border-radius: 22px !important;
+}
+
+.upload-section .progress-container {
+    width: 330px !important;
+    margin-top: 4px !important;
+}
+
+.upload-section .progress-bar,
+.upload-section .progress {
+    height: 16px !important;
+    line-height: 16px !important;
+}
+
+.upload-section .status {
+    margin-top: 3px !important;
+    font-size: 14px !important;
+}
+
+h3[data-uploaded-heading="true"] {
+    margin-top: 8px !important;
+    margin-bottom: 4px !important;
+    font-size: 21px !important;
+}
+
+/* Clean mobile layout: image-2 style, no weird emoji/tiny columns */
+@media (max-width: 600px) {
+    body {
+        padding: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    .top-button-panel {
+        width: calc(100% - 48px) !important;
+        height: 220px !important;
+        min-height: 0 !important;
+        margin: 0 auto !important;
+        padding: 54px 18px 0 !important;
+    }
+
+    .top-button-panel .animated-btn {
+        width: 78vw !important;
+        max-width: 310px !important;
+        min-width: 0 !important;
+        min-height: 72px !important;
+        font-size: 24px !important;
+        border-radius: 16px !important;
+    }
+
+    .shivang-glow {
+        margin: 120px auto 42px !important;
+        font-size: 48px !important;
+        color: #ff4f7b !important;
+        letter-spacing: 2px !important;
+    }
+
+    .upload-section {
+        width: calc(100% - 46px) !important;
+        margin: 0 auto 28px !important;
+        padding: 24px 28px 28px !important;
+        border-radius: 18px !important;
+        text-align: center !important;
+    }
+
+    .upload-section h2 {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 0 12px !important;
+        font-size: 27px !important;
+        line-height: 1.15 !important;
+    }
+
+    .upload-section label {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 auto 10px !important;
+        font-size: 22px !important;
+        line-height: 1.25 !important;
+        color: #020617 !important;
+    }
+
+    .upload-section #fileUpload,
+    .upload-section #tagInput,
+    .upload-section .password-field-wrapper,
+    .upload-section .colorful-upload-btn,
+    .upload-section .progress-container {
+        display: block !important;
+        width: 100% !important;
+        max-width: 300px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .upload-section #fileUpload {
+        height: 58px !important;
+        margin-top: 0 !important;
+        margin-bottom: 28px !important;
+        padding: 10px 12px !important;
+        font-size: 17px !important;
+    }
+
+    .upload-section #tagInput {
+        height: 58px !important;
+        margin-top: 0 !important;
+        margin-bottom: 24px !important;
+        padding: 12px 16px !important;
+        font-size: 20px !important;
+    }
+
+    .upload-section .password-field-wrapper {
+        margin-top: 0 !important;
+        margin-bottom: 24px !important;
+    }
+
+    .upload-section .password-field-wrapper input {
+        display: block !important;
+        width: 100% !important;
+        height: 58px !important;
+        margin: 0 !important;
+        padding: 12px 16px !important;
+        border: 1px solid #b0bec5 !important;
+        border-radius: 10px !important;
+        font-size: 20px !important;
+    }
+
+    .upload-section .toggle-password-btn {
+        display: none !important;
+    }
+
+    .upload-section .colorful-upload-btn {
+        height: 58px !important;
+        margin-top: 0 !important;
+        margin-bottom: 22px !important;
+        padding: 10px 18px !important;
+        border-radius: 29px !important;
+        font-size: 22px !important;
+        font-weight: 700 !important;
+    }
+
+    .upload-section .progress-container {
+        margin-top: 0 !important;
+    }
+
+    .upload-section .progress-bar,
+    .upload-section .progress {
+        height: 22px !important;
+        line-height: 22px !important;
+        border-radius: 10px !important;
+    }
+
+    .upload-section .status {
+        margin-top: 8px !important;
+        font-size: 18px !important;
+    }
+
+    .file-preview-container {
+        width: 100% !important;
+        max-width: 300px !important;
+        margin: 0 auto 24px !important;
+    }
+
+    h3[data-uploaded-heading="true"] {
+        margin-top: 26px !important;
+        margin-bottom: 22px !important;
+        font-size: 28px !important;
+    }
+}
+
+/* Match /cool/ first screenshot CSAT modal UI */
+.csat-modal-content {
+    width: 500px !important;
+    max-width: calc(100vw - 44px) !important;
+    padding: 28px 26px 24px !important;
+    border: 2px solid #4f5fe3 !important;
+    border-radius: 16px !important;
+    background: #ffffff !important;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.26) !important;
+    transform: none !important;
+}
+
+.csat-modal-content h4 {
+    color: #1a237e !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    margin: 0 0 22px !important;
+}
+
+.csat-modal-content .input-section {
+    width: 100% !important;
+    margin: 0 auto 18px !important;
+    border-radius: 8px !important;
+}
+
+.csat-modal-content .good-section,
+.csat-modal-content .bad-section {
+    padding: 16px 16px 14px !important;
+}
+
+.csat-modal-content .good-section {
+    background: #c8e6c9 !important;
+}
+
+.csat-modal-content .bad-section {
+    background: #ffcdd2 !important;
+}
+
+.csat-modal-content .input-section label {
+    display: block !important;
+    color: #37474f !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin: 0 0 8px !important;
+}
+
+.csat-modal-content input[type="number"],
+.csat-modal-content select {
+    display: block !important;
+    width: 250px !important;
+    max-width: 82% !important;
+    height: 56px !important;
+    margin: 0 auto !important;
+    padding: 10px 14px !important;
+    border: 1px solid #b0bec5 !important;
+    border-radius: 8px !important;
+    color: #111827 !important;
+    background: #ffffff !important;
+    font-size: 20px !important;
+    font-weight: 400 !important;
+}
+
+.csat-modal-content #requiredCSAT {
+    height: 48px !important;
+    margin-top: 6px !important;
+}
+
+.csat-modal-content .result-section {
+    width: 100% !important;
+    margin: 16px auto 20px !important;
+    padding: 18px 12px !important;
+    border-radius: 8px !important;
+    background: #eceff1 !important;
+}
+
+.csat-modal-content .result-section p {
+    color: #455a64 !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    margin: 8px 0 !important;
+}
+
+.csat-modal-content .shivang-rainbow {
+    font-size: 30px !important;
+    font-weight: 800 !important;
+    letter-spacing: 4px !important;
+    background: linear-gradient(90deg, #ff9aa2, #ffb7b2, #c7ceea, #a2d2ff) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+}
+
+.csat-modal-content .button-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 18px !important;
+    flex-wrap: nowrap !important;
+}
+
+.csat-modal-content .close-btn,
+.csat-modal-content .calculate-btn {
+    width: 188px !important;
+    max-width: 188px !important;
+    height: 56px !important;
+    margin: 0 !important;
+    padding: 12px 18px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    color: #ffffff !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14) !important;
+}
+
+.csat-modal-content .close-btn {
+    background: #f9413b !important;
+}
+
+.csat-modal-content .calculate-btn {
+    background: #4553bf !important;
+}
+
+@media (max-width: 600px) {
+    .csat-modal-content {
+        width: calc(100vw - 36px) !important;
+        padding: 22px 18px 20px !important;
+    }
+
+    .csat-modal-content .button-container {
+        gap: 12px !important;
+    }
+
+    .csat-modal-content .close-btn,
+    .csat-modal-content .calculate-btn {
+        width: 44% !important;
+        max-width: 160px !important;
+        height: 50px !important;
+        font-size: 17px !important;
+    }
+}
+
+/* Compact CSAT modal after cool-style text alignment */
+.csat-modal-content {
+    width: 420px !important;
+    max-width: calc(100vw - 48px) !important;
+    padding: 18px 22px 20px !important;
+    border-radius: 14px !important;
+}
+
+.csat-modal-content h4 {
+    font-size: 20px !important;
+    margin-bottom: 14px !important;
+}
+
+.csat-modal-content .input-section {
+    margin-bottom: 12px !important;
+}
+
+.csat-modal-content .good-section,
+.csat-modal-content .bad-section {
+    padding: 10px 14px !important;
+}
+
+.csat-modal-content .input-section label {
+    font-size: 18px !important;
+    margin-bottom: 6px !important;
+}
+
+.csat-modal-content input[type="number"],
+.csat-modal-content select {
+    width: 220px !important;
+    height: 44px !important;
+    font-size: 18px !important;
+    padding: 8px 12px !important;
+}
+
+.csat-modal-content #requiredCSAT {
+    height: 42px !important;
+}
+
+.csat-modal-content .result-section {
+    margin: 12px auto 14px !important;
+    padding: 12px 10px !important;
+}
+
+.csat-modal-content .result-section p {
+    font-size: 16px !important;
+    margin: 5px 0 !important;
+}
+
+.csat-modal-content .shivang-rainbow {
+    font-size: 24px !important;
+    letter-spacing: 4px !important;
+}
+
+.csat-modal-content .button-container {
+    gap: 14px !important;
+}
+
+.csat-modal-content .close-btn,
+.csat-modal-content .calculate-btn {
+    width: 150px !important;
+    max-width: 150px !important;
+    height: 48px !important;
+    padding: 10px 14px !important;
+    font-size: 17px !important;
+}
+
+@media (max-height: 740px) {
+    .csat-modal-content {
+        transform: scale(0.9) !important;
+    }
+}
+
+/* Exact CSAT modal size to match provided /cool/ screenshot */
+.csat-modal-content {
+    width: 500px !important;
+    max-width: 500px !important;
+    min-height: 696px !important;
+    padding: 28px 26px 24px !important;
+    border: 2px solid #4f5fe3 !important;
+    border-radius: 16px !important;
+    background: #ffffff !important;
+    transform: none !important;
+}
+
+.csat-modal-content h4 {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    margin: 0 0 22px !important;
+    color: #1a237e !important;
+}
+
+.csat-modal-content .input-section {
+    width: 446px !important;
+    margin: 0 auto 18px !important;
+    border-radius: 8px !important;
+}
+
+.csat-modal-content .good-section,
+.csat-modal-content .bad-section {
+    padding: 16px 16px 14px !important;
+}
+
+.csat-modal-content .input-section label {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin: 0 0 8px !important;
+    color: #37474f !important;
+}
+
+.csat-modal-content input[type="number"],
+.csat-modal-content select {
+    width: 250px !important;
+    height: 56px !important;
+    padding: 10px 14px !important;
+    font-size: 20px !important;
+    margin: 0 auto !important;
+}
+
+.csat-modal-content #requiredCSAT {
+    height: 48px !important;
+    margin-top: 6px !important;
+}
+
+.csat-modal-content .result-section {
+    width: 446px !important;
+    margin: 16px auto 20px !important;
+    padding: 18px 12px !important;
+    border-radius: 8px !important;
+    background: #eceff1 !important;
+}
+
+.csat-modal-content .result-section p {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    margin: 8px 0 !important;
+    color: #455a64 !important;
+}
+
+.csat-modal-content .shivang-rainbow {
+    font-size: 30px !important;
+    letter-spacing: 4px !important;
+}
+
+.csat-modal-content .button-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 18px !important;
+    flex-wrap: nowrap !important;
+}
+
+.csat-modal-content .close-btn,
+.csat-modal-content .calculate-btn {
+    width: 188px !important;
+    max-width: 188px !important;
+    height: 56px !important;
+    padding: 12px 18px !important;
+    margin: 0 !important;
+    border-radius: 8px !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+}
+
+@media (max-width: 560px) {
+    .csat-modal-content {
+        width: calc(100vw - 32px) !important;
+        max-width: calc(100vw - 32px) !important;
+        min-height: auto !important;
+        padding: 22px 18px 20px !important;
+    }
+
+    .csat-modal-content .input-section,
+    .csat-modal-content .result-section {
+        width: 100% !important;
+    }
+
+    .csat-modal-content .close-btn,
+    .csat-modal-content .calculate-btn {
+        width: 44% !important;
+        max-width: 160px !important;
+        height: 50px !important;
+        font-size: 17px !important;
+    }
+}
+
+/* Final smaller CSAT modal - prevents oversized/cut layout */
+.csat-modal-content {
+    width: 420px !important;
+    max-width: 420px !important;
+    min-height: 0 !important;
+    padding: 18px 22px 20px !important;
+    border-radius: 14px !important;
+    transform: none !important;
+}
+
+.csat-modal-content h4 {
+    font-size: 20px !important;
+    margin: 0 0 14px !important;
+}
+
+.csat-modal-content .input-section {
+    width: 100% !important;
+    margin: 0 auto 12px !important;
+}
+
+.csat-modal-content .good-section,
+.csat-modal-content .bad-section {
+    padding: 10px 14px !important;
+}
+
+.csat-modal-content .input-section label {
+    font-size: 18px !important;
+    margin: 0 0 6px !important;
+}
+
+.csat-modal-content input[type="number"],
+.csat-modal-content select {
+    width: 220px !important;
+    height: 44px !important;
+    padding: 8px 12px !important;
+    font-size: 18px !important;
+}
+
+.csat-modal-content #requiredCSAT {
+    height: 42px !important;
+    margin-top: 4px !important;
+}
+
+.csat-modal-content .result-section {
+    width: 100% !important;
+    margin: 12px auto 14px !important;
+    padding: 12px 10px !important;
+}
+
+.csat-modal-content .result-section p {
+    font-size: 16px !important;
+    margin: 5px 0 !important;
+}
+
+.csat-modal-content .shivang-rainbow {
+    font-size: 24px !important;
+    letter-spacing: 4px !important;
+}
+
+.csat-modal-content .button-container {
+    gap: 14px !important;
+}
+
+.csat-modal-content .close-btn,
+.csat-modal-content .calculate-btn {
+    width: 150px !important;
+    max-width: 150px !important;
+    height: 48px !important;
+    padding: 10px 14px !important;
+    font-size: 17px !important;
+}
+
+@media (max-height: 760px) {
+    .csat-modal-content {
+        transform: scale(0.9) !important;
+    }
+}
+
+@media (max-width: 560px) {
+    .csat-modal-content {
+        width: calc(100vw - 32px) !important;
+        max-width: calc(100vw - 32px) !important;
+        padding: 18px 16px !important;
+    }
+}

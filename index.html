@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>शिवांग</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css?v=20260723-final-small-csat" />
+</head>
+
+<body>
+    <div class="background-diya-glow" aria-hidden="true"></div>
+    <main>
+        <div class="top-button-panel">
+            <button class="animated-btn bg-gradient-to-r from-blue-500 to-blue-700" type="button"
+                onclick="openCSATModal()">CSAT Calculator</button>
+        </div>
+        <div class="shivang-glow"><span class="heading-diya" aria-hidden="true">🪔</span><span>छठ पूजा</span><span class="heading-diya" aria-hidden="true">🪔</span></div>
+
+        <section class="upload-section">
+            <h2>Upload Images</h2>
+            <label for="fileUpload">Choose image files to upload:</label>
+            <input accept="image/*" id="fileUpload" type="file" multiple />
+            <div id="filePreviewContainer" class="file-preview-container"></div>
+            <input id="tagInput" placeholder="Enter tag (e.g., SHIVANG)" type="text" />
+            <div class="password-field-wrapper">
+                <input id="passwordInput" placeholder="Set password (optional)" type="password" />
+                <button class="toggle-password-btn" onclick="togglePasswordVisibility('passwordInput', this)"
+                    type="button">Show</button>
+            </div>
+            <button class="colorful-upload-btn" onclick="uploadImage()" type="button">Upload</button>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress" id="progress">0%</div>
+                </div>
+                <div class="status" id="status">Ready</div>
+            </div>
+        </section>
+
+        <h3 data-uploaded-heading="true">Uploaded Images</h3>
+        <div id="gallery"></div>
+    </main>
+
+    <div class="modal" id="tagModal">
+        <div class="modal-content">
+            <h4 id="modalHeading">Tag is required!</h4>
+            <input id="modalTagInput" placeholder="Enter tag (e.g., SHIVANG)" type="text" />
+            <div class="password-field-wrapper">
+                <input id="modalPasswordInput" placeholder="Set password (optional)" type="password" />
+                <button class="toggle-password-btn" onclick="togglePasswordVisibility('modalPasswordInput', this)"
+                    type="button">Show</button>
+            </div>
+            <button class="upload-btn" onclick="submitTag()" type="button">Upload</button>
+            <button class="cancel-btn" onclick="closeModal()" type="button">Cancel</button>
+            <div class="modal-progress-container" id="modalProgressContainer">
+                <div class="modal-progress-bar">
+                    <div class="modal-progress" id="modalProgress">0%</div>
+                </div>
+            <div class="modal-status" id="modalStatus">Uploading...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="csat-modal" id="csatModal">
+        <div class="csat-modal-content">
+            <h4>CSAT Calculator</h4>
+            <div class="input-section good-section">
+                <label for="goodCount">Good Count:</label>
+                <input id="goodCount" min="0" type="number" value="0" />
+            </div>
+            <div class="input-section bad-section">
+                <label for="badCount">Bad Count:</label>
+                <input id="badCount" min="0" type="number" value="0" />
+            </div>
+            <div class="input-section">
+                <label for="requiredCSAT">Required CSAT (%):</label>
+                <select id="requiredCSAT">
+                    <option value="70">70%+</option>
+                    <option value="71">71%+</option>
+                    <option value="72">72%+</option>
+                    <option value="73">73%+</option>
+                    <option value="74">74%+</option>
+                    <option value="75">75%+</option>
+                    <option value="76">76%+</option>
+                    <option value="77">77%+</option>
+                    <option value="78">78%+</option>
+                    <option value="79">79%+</option>
+                    <option value="80">80%+</option>
+                    <option value="81">81%+</option>
+                    <option value="82">82%+</option>
+                    <option value="83">83%+</option>
+                    <option value="84">84%+</option>
+                    <option value="85">85%+</option>
+                    <option value="86">86%+</option>
+                    <option value="87">87%+</option>
+                    <option value="88">88%+</option>
+                    <option value="89">89%+</option>
+                    <option value="90">90%+</option>
+                    <option value="91">91%+</option>
+                    <option value="92">92%+</option>
+                    <option value="93">93%+</option>
+                    <option value="94">94%+</option>
+                    <option value="95">95%+</option>
+                    <option value="96">96%+</option>
+                    <option value="97">97%+</option>
+                    <option value="98">98%+</option>
+                    <option value="99">99%+</option>
+                    <option value="100">100%+</option>
+                </select>
+            </div>
+            <div class="result-section" id="csatResult">
+                <p>Total: 0</p>
+                <p>CSAT: 0%</p>
+                <p id="csatStatus">Enter counts to see status</p>
+            </div>
+            <div class="button-container">
+                <button class="close-btn" onclick="closeCSATModal()" type="button">Close</button>
+                <button class="calculate-btn" id="calculateButton" onclick="calculateCSAT()"
+                    type="button">Calculate</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js?v=20260723-final-small-csat"></script>
+</body>
+
+</html>
